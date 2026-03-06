@@ -81,3 +81,5 @@ https://user-images.githubusercontent.com/xxxxxxx/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxx
 git clone https://github.com/Captainancient/sentinel-matrix-hacker.git
 cd sentinel-matrix-hacker
 # Open index.html in browser
+
+Credits: Mr. Frosty, Google, GSAP and one who wishes to remain anonymous
