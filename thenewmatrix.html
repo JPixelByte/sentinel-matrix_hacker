@@ -94,9 +94,11 @@
                <li><span class="eternity-symbol">永</span> Customize your matrix rain experience using the GUI controls at the bottom right. Adjust speed, size, and color to your liking!</li> 
                <li><span class="eternity-symbol">永</span> You can type commands directly into the input field and click 'Execute' to apply them on the fly!</li>
                <li><span class="eternity-symbol">永</span> You can also click the 'CONFIRM & APPLY' button in the modal after entering a command to see the changes take effect immediately.</li>
+               <li><span class="eternity-symbol">永</span> If you want background music, click the '🎵 Music Player ▼' button to toggle the music on/off.</li>
+               <li><span class="eternity-symbol">永</span> If you want to view an audio visualizer, click the '🎵 Music Player ▼' button to view an audio visualizer.</li>
               
                <li><span class="eternity-symbol">永</span> You can drag the circular emitter around the screen to create particle explosions wherever you like. Try it out by clicking or hovering over the emitter! </li>
-               <li>The Color Swatch is also draggable!</li>
+               <li><span class="eternity-symbol">永</span> The Color Swatch is also draggable!</li>
                <li><span class="eternity-symbol">永</span> The bottom right button allows the user to random letters which form matrix sentences.</li>
                <li><span class="eternity-symbol">永</span> Remember, use the question mark to open up the Instructions Modal.</li>
                <li><span class="eternity-symbol">永</span> The chinese character <span class="eternity-symbol">永</span> symbolizes 'eternity' !</li>
@@ -106,7 +108,7 @@
     </div>
 
 
-     
+       <div id="cosmic-suite" class="audioToggleCosmicSuite"><i class="fa-etch fa-solid fa-music" id="fa-music"></i></div>
 
      <!-- This is the old not in use Dat HTML GUI controls -->
      <!-- GUI Controls for Matrix Rain: -->
@@ -120,7 +122,7 @@
         <input type="range" id="speed" min="1" max="20" value="5">
         -->
         <label for="color" class="color-label" id="color_palette">
-        <i class="fa-solid fa-palette"></i></label>
+        <i class="fa-solid fa-palette" id="color-palette-icon"></i></label>
         <input type="color" id="color" class="color-swatch" value="#4c9a0f">
         <!-- <span id="hex-label" class="hex-label">#709358</span> -->
   
@@ -174,10 +176,46 @@
         });
     </script>
 
+    
+    <script>
+      let cosmicsuite = document.getElementById('cosmic-suite');
+      cosmicsuite.addEventListener('click', toggleMusic);
+      let bgmusic = false;
+
+      let martian = new Audio()
+      martian.src = './sounds/martian.mp3'
+
+      function spaceWarningFX() {
+        martian.play();
+      }
+
+      
+    let space = new Audio()
+    space.src = './sounds/cosmicsuite.mp3'
+
+      function toggleMusic() {
+        martian.play()
+        bgmusic = !bgmusic
+        space.play()
+        if (!bgmusic) {
+          space.pause()
+        }
+      }
+    </script>
+
 
     <script src="scripts/thenewmatrix.js" defer></script>
     <script src="scripts/instructions.js"></script>
     <script src="scripts/gsapcollection.js" defer></script>
+<!-- 
+    <script type="module" src="scripts/audio.js"></script>
+    <script type="module" src="scripts/threejsaudio.js"></script> 
+-->
+
+    <!-- 
+    <script type="module" src="scripts/3jsaudioglobe.js"></script> 
+    -->
+
 </body>
 </html>
 
