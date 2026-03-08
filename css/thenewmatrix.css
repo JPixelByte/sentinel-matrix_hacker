@@ -143,24 +143,21 @@ button:hover {
 .rain-toggle:focus-visible,
 .rain-toggle:active {
     outline: none !important;
-    box-shadow: 0 0 16px #00ff00aa, inset 0 0 10px #00ff0033 !important;
+    box-shadow: 0 0 16px #020202aa, inset 0 0 10px #00ff0033 !important;
 }
 
-.rain-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 28px #00ff00cc, inset 0 0 16px #00ff0055;
-}
 
 #toggle-icon {
-    font-size: 2.4rem;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
+    font-size: 2.2rem;
+    color: #030303;
     transition: transform 0.2s ease;
 }
-
-.rain-toggle:hover #toggle-icon {
-    transform: scale(1.15);
+#toggle-icon:hover {
+    /* transform: scale(1.1); */
+    text-shadow: 0 0 8px #000000;
+    color:white;
 }
+
 
 /* Cyberpunk Modal */
 .cyber-modal {
@@ -412,9 +409,19 @@ h2 {
 }
 
 #color_palette {
+    color:white;
     font-size: 1.4em;
     transition: transform 0.2s ease;
+    /* filter: grayscale(50%) invert(100%);
+    -webkit-filter: grayscale(50%) invert(100%); */
 }   
+
+#color-palette-icon:hover {
+    transform: scale(1.2);
+    color:#007400;
+    /* filter: brightness(100%) contrast(100%) hue-rotate(320deg) invert(50%);
+    -webkit-filter: brightness(100%) contrast(100%) hue-rotate(320deg) invert(50%); */
+}
 .color-label {
     cursor: pointer;
     color: #fcfcfc;
@@ -549,6 +556,59 @@ input[type="color"] {
   border-radius: 2px;
 }
 
+/* Start of: 3JS Audio Player GUI  */
+.audio-toggle, .audio-btn {
+    transition: all 0.2s ease;
+}
+
+.audio-toggle:hover{
+    background-color:goldenrod;
+    color:black;
+    border:1px solid black;
+    transition: all 0.2s ease;
+}
+.audio-controls.audio-btn:hover{
+    background-color:rgb(243, 239, 3);
+    border:1px solid black;
+    transition: all 0.2s ease;
+}
+
+#fa-music {
+    font-size: 1.8rem;
+    margin-left:-9px;
+    color: #026e0b;
+    text-shadow: 0 0 4px black;
+    transition: transform 0.2s ease;
+}
+#fa-music:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 8px #00ff00, 0 0 16px #00ff00;
+}
+
+#cosmic-suite {
+    position: absolute;
+    bottom:22%;
+    right:1.4%;
+    z-index: 20000;
+    width: 64px;
+    height: 64px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 0, 0.25), rgba(255, 255, 0, 0.08) 70%, transparent);
+    border: 2px solid #ffff00;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 16px #ffff00aa, inset 0 0 10px #ffff0033;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cosmic-suite:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 28px #ffff00cc, inset 0 0 16px #ffff0055;
+}
+
+
+/* End of: 3JS Audio Player GUI   */
 /* Start of: Responsive Adjustments  */
 @media (max-width: 300px) or (max-height: 300px) {
   .button-wrapper button {
@@ -556,7 +616,6 @@ input[type="color"] {
     border: none;
   }
 }
-
 
 /* Show & perfectly center on small devices (phones, tablets < 900px) */
 @media only screen and (max-width: 899px) {
