@@ -390,6 +390,13 @@ h2 {
     /* margin-left: 5px !important; */
 }
 
+.dg .title {
+  display: none !important;
+}
+
+.close-button, .close-bottom, .open-button {
+    display: none !important;
+}
 
 
 /* 4. Match Text to Green */
